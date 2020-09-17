@@ -27,6 +27,8 @@ https://www.nuget.org/packages/PTI.Microservices.Library/
 
 ## Quick Samples
 
+### Sample 1
+
     [HttpPost("[action]")]
         public async Task<IActionResult> UploadImages([FromBody]UploadImagesModel model)
         {
@@ -51,6 +53,12 @@ https://www.nuget.org/packages/PTI.Microservices.Library/
             return Ok();
         }
         
+### Sample 2
+    await twitterFakeFollowersService.GetAllPossibleFakeFollowersForUsernameAsync(this.TwitterConfiguration.ScreenName,
+                (possibleFakeUser) =>
+                {
+                   //Your custom logic to execute when a new possible twitter fake user has been detected
+                }, cancellationToken: cancellationTokenSource.Token);
 
 
 The following are sample applications of things you could do with the package
