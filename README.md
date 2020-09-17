@@ -38,6 +38,7 @@ For inquiries, and business deals, you can write an email to services@pticostari
   * Add Support for Azure Cognitive Search
   * Integrate PTI Emotions Analyzer APIs into the package.
 * December 2020
+  * Add support for gRPC
   * Integrate PTI Books Translator APIs into the package
   * Enable package monthly payment using Paypal-based subscriptions.
 * January 2021
