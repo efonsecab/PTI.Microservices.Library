@@ -38,3 +38,4 @@ For inquiries, and business deals, you can write an email to services@pticostari
   * Integrate PTI Emotions Analyzer APIs into the package.
 * December 2020
   * Integrate PTI Books Translator APIs into the package
+  * Enable package monthly payment using Paypal-based subscriptions.
