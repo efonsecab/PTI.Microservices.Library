@@ -25,6 +25,34 @@ The package exposes services such as:
 You can download the package at:
 https://www.nuget.org/packages/PTI.Microservices.Library/
 
+## Quick Samples
+
+    [HttpPost("[action]")]
+        public async Task<IActionResult> UploadImages([FromBody]UploadImagesModel model)
+        {
+            Guid projectId = Guid.Parse(model.ProjectId);
+            List<Uri> lstImages = model.Items.Where(p=>p.IsSelected==true).Select(p => new Uri(p.ImageUrl)).ToList();
+            var uploadImagesResult = await AzureCustomVisionService.UploadImagesAsync(lstImages, projectId);
+            List<string> tags = new List<string>() { model.Tag };
+            foreach (var singleImage in uploadImagesResult)
+            {
+                try
+                {
+                    await this.AzureCustomVisionService.CreateImageTagsAsync(projectId,
+                        singleImage.Image.Id,
+                        tags);
+                    await Task.Delay(TimeSpan.FromSeconds(1));
+                }
+                catch (Exception ex)
+                {
+                    this.Logger.LogError(ex, ex.Message);
+                }
+            }
+            return Ok();
+        }
+        
+
+
 The following are sample applications of things you could do with the package
 * Search Images on Bing and feed your Custom Vision Models: https://github.com/efonsecab/BlazorCustomVisionUploader
 * Search Images on Bing and feed your Azure Video Indexer Person Models: https://github.com/efonsecab/BlazorVideoIndexerUploader
