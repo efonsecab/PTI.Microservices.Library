@@ -43,3 +43,4 @@ For inquiries, and business deals, you can write an email to services@pticostari
 * January 2021
   * Create a .NET 5 based version of the package
   * Add support for SignalR to TwitterFakeFollowersService (only for .NET 5)
+  * Integrate PTI's SitemapScanner into the main package (.NET 3.1 version)
