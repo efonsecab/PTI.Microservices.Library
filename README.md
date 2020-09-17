@@ -20,4 +20,8 @@ The package exposes services such as:
 * Youtube
 
 You can download the package at:
-https://www.nuget.org/packages/PTI.Microservices.Library/0.0.2-preview
+https://www.nuget.org/packages/PTI.Microservices.Library/
+
+The following are sample applications of things you could do with the package
+* Search Images on Bing and feed your Custom Vision Models: https://github.com/efonsecab/BlazorCustomVisionUploader
+* Search Images on Bing and feed your Azure Video Indexer Person Models: https://github.com/efonsecab/BlazorVideoIndexerUploader
