@@ -30,3 +30,11 @@ The following are sample applications of things you could do with the package
 
 For inquiries, and business deals, you can write an email to services@pticostarica.com
 
+## Roadmap
+* October 2020
+  * Integrate Custom Finder APIs into the package. You can check our public APIs here:https://rapidapi.com/organization/pti-costa-rica
+* November 2020
+  * Add Support for Azure Cognitive Search
+  * Integrate PTI Emotions Analyzer APIs into the package.
+* December 2020
+  * Integrate PTI Books Translator APIs into the package
