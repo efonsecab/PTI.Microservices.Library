@@ -45,3 +45,6 @@ For inquiries, and business deals, you can write an email to services@pticostari
   * Create a .NET 5 based version of the package
   * Add support for SignalR to TwitterFakeFollowersService (only for .NET 5)
   * Integrate PTI's SitemapScanner into the main package (.NET 3.1 version)
+  
+  ## Feature Requests
+  If there is any functionality you would like to see included in the package, write an email with the subject "Feature Request" to services@pticostarica.com
