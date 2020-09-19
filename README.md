@@ -73,6 +73,29 @@ https://www.nuget.org/packages/PTI.Microservices.Library/
     {
        //Your custom code to execute when a keyword has been processed.Added so that you do not have to wait for the whole process to finish
     });
+    
+### Sample 6
+    var result =
+        await emotionsAnalyzerService.AnalyzeFileFromUrlAsync(fileUrl,
+        model: new Microservices.Library.Models.EmotionsAnalyzer.AnalyzeFileModel()
+        {
+            SourceFileUrl=fileUrl,
+            EmailForResults="youremail@yourdomain.xyz",
+            AnalysisWorksheet = 
+                new Microservices.Library.Models.EmotionsAnalyzer.AnalysisWorksheet()
+                {
+                   ColumnToAnalyze="PostText",
+                   ColumnWithDate="RecordDate",
+                   ColumnWithUniqueId="RecordUniqueId",
+                   SentimentPlaceholderColumn="SentimentAnalysisPlaceHolder",
+                   WorksheetName="FacebookPosts"
+                },
+                PlaceWorksheet=new Microservices.Library.Models.EmotionsAnalyzer.PlaceWorksheet()
+                {
+                   SentimentPlaceholderColumn="PlaceSentimentPlaceHolder",
+                   WorksheetName="PlaceSentiment"
+                }
+        });
 
 The following are sample applications of things you could do with the package
 * Search Images on Bing and feed your Custom Vision Models: https://github.com/efonsecab/BlazorCustomVisionUploader
