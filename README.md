@@ -60,6 +60,9 @@ https://www.nuget.org/packages/PTI.Microservices.Library/
                    //Your custom logic to execute when a new possible twitter fake user has been detected
                 }, cancellationToken: cancellationTokenSource.Token);
 
+### Sample 3
+    AudibleWeatherService audibleWeatherService = new AudibleWeatherService(logger, azureMapsService, azureSpeechService);
+    await audibleWeatherService.SpeakCurrentWeatherAsync(geoCoordinates);
 
 The following are sample applications of things you could do with the package
 * Search Images on Bing and feed your Custom Vision Models: https://github.com/efonsecab/BlazorCustomVisionUploader
