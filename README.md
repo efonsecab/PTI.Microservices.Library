@@ -64,6 +64,10 @@ https://www.nuget.org/packages/PTI.Microservices.Library/
     AudibleWeatherService audibleWeatherService = new AudibleWeatherService(logger, azureMapsService, azureSpeechService);
     await audibleWeatherService.SpeakCurrentWeatherAsync(geoCoordinates);
 
+### Sample 4
+    var result = await booksTranslationService.TranslateDocXFileFromUrlAsync(fileUrl, TranslationLanguage.English, TranslationLanguage.Spanish,
+    BookTranslationMode.KeepFormatting, emailAddress:"youremail@yourdomain.xyz");
+
 The following are sample applications of things you could do with the package
 * Search Images on Bing and feed your Custom Vision Models: https://github.com/efonsecab/BlazorCustomVisionUploader
 * Search Images on Bing and feed your Azure Video Indexer Person Models: https://github.com/efonsecab/BlazorVideoIndexerUploader
