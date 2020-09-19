@@ -67,6 +67,12 @@ https://www.nuget.org/packages/PTI.Microservices.Library/
 ### Sample 4
     var result = await booksTranslationService.TranslateDocXFileFromUrlAsync(fileUrl, TranslationLanguage.English, TranslationLanguage.Spanish,
     BookTranslationMode.KeepFormatting, emailAddress:"youremail@yourdomain.xyz");
+    
+### Sample 5
+    var allKeywords = await azureVideoIndexerService.GetAllKeywordsAsync(onNewKeywordFound:(keyword)=> 
+    {
+       //Your custom code to execute when a keyword has been processed.Added so that you do not have to wait for the whole process to finish
+    });
 
 The following are sample applications of things you could do with the package
 * Search Images on Bing and feed your Custom Vision Models: https://github.com/efonsecab/BlazorCustomVisionUploader
