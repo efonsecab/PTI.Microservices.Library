@@ -8,6 +8,8 @@ The package is designed to be consumed from microservices, so most items are asy
 The TwitterFakeFollowersService currently supports communicating back to the consumer by using Action delegates, and the future version of it will support using SignalR.
 "PTI.Microservices.Library" is currently running under .NET Core 3.1.
 
+The library is designed so that you can use your own Azure Resources, by setting your own configuration.
+
 The package exposes services such as:
 * Azure Bing Search
 * Azure Computer Vision
