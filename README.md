@@ -25,11 +25,29 @@ The package exposes services such as:
 You can download the package at:
 https://www.nuget.org/packages/PTI.Microservices.Library/
 
+## How To Use The Package
+1. Set your RapidApiKey.
+2. Register Services (or manually create services instances)
+
 ## About the Configuration Classes
 The services configuration classes have an endpoint property, in the case of Azure services, those will usually be the Url for your created resource in Azure, or the base azure service api.
 In the case of the specialized services such as Customer Finder, Emotions Analyzer, Books Translation and similar, the property is prefilled with the Rapid API base service, if you use appSettings-based configuration the default value will be overwritten to respect developer-based configuration, this means you will need to set the correct service Url when using appSettings-based configuration.
 
 ## Quick Samples
+
+### Setting your key
+    //The given key is for demo purposes and will stop working eventually. 
+    //To get your own key request it by writing to services@pticostarica.com
+    GlobalPackageConfiguration.RapidApiKey = "a3893edcbfmsh2efa1861dcc7a10p159864jsnf17e667d1bf7";
+
+### Register your services
+    services.AddSingleton(twitterConfiguration);
+    services.AddLogging();
+    services.AddTransient<ILogger, Logger<TwitterPossibleFakeAccount>>();
+    services.AddTransient<CustomHttpClientHandler>();
+    services.AddTransient<CustomHttpClient>();
+    services.AddTransient<TwitterService>();
+    services.AddTransient<TwitterPossibleFakeAccountService>();
 
 ### Sample 1
 
