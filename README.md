@@ -49,7 +49,7 @@ In the case of the specialized services such as Customer Finder, Emotions Analyz
     services.AddTransient<TwitterService>();
     services.AddTransient<TwitterPossibleFakeAccountService>();
 
-### Sample 1
+### Sample 1 - Upload Images with tags to Azure Custom Vision
 
     [HttpPost("[action]")]
         public async Task<IActionResult> UploadImages([FromBody]UploadImagesModel model)
@@ -75,28 +75,28 @@ In the case of the specialized services such as Customer Finder, Emotions Analyz
             return Ok();
         }
         
-### Sample 2
+### Sample 2 - Detect Possible Twitter Fake Followers
     await twitterFakeFollowersService.GetAllPossibleFakeFollowersForUsernameAsync(this.TwitterConfiguration.ScreenName,
                 (possibleFakeUser) =>
                 {
                    //Your custom logic to execute when a new possible twitter fake user has been detected
                 }, cancellationToken: cancellationTokenSource.Token);
 
-### Sample 3
+### Sample 3 - Detect current weather and hear it on Default Speakers
     AudibleWeatherService audibleWeatherService = new AudibleWeatherService(logger, azureMapsService, azureSpeechService);
     await audibleWeatherService.SpeakCurrentWeatherAsync(geoCoordinates);
 
-### Sample 4
+### Sample 4 - Translate a DOCX file to anothere language
     var result = await booksTranslationService.TranslateDocXFileFromUrlAsync(fileUrl, TranslationLanguage.English, TranslationLanguage.Spanish,
     BookTranslationMode.KeepFormatting, emailAddress:"youremail@yourdomain.xyz");
     
-### Sample 5
+### Sample 5 - Get All Keywords Found in an Azure Media Services Video Indexer Account
     var allKeywords = await azureVideoIndexerService.GetAllKeywordsAsync(onNewKeywordFound:(keyword)=> 
     {
        //Your custom code to execute when a keyword has been processed.Added so that you do not have to wait for the whole process to finish
     });
     
-### Sample 6
+### Sample 6 - Detects Sentiment and Personality information based on text in a spreadsheet
     var result =
         await emotionsAnalyzerService.AnalyzeFileFromUrlAsync(fileUrl,
         model: new Microservices.Library.Models.EmotionsAnalyzer.AnalyzeFileModel()
@@ -119,7 +119,7 @@ In the case of the specialized services such as Customer Finder, Emotions Analyz
                 }
         });
 
-### Sample 7
+### Sample 7 - Detect the topics found in a specified Twitter Username
     TwitterDataAnalysisService twitterDataAnalysisService = new TwitterDataAnalysisService(
     logger, twitterService, azureTextAnalyticsService);
     var twitterUserTopics = await twitterDataAnalysisService.GetTopicsForUserAsync("twitterusername");
