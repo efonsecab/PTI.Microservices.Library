@@ -112,15 +112,6 @@ In the case of the specialized services such as Customer Finder, Emotions Analyz
     logger, twitterService, azureTextAnalyticsService);
     var twitterUserTopics = await twitterDataAnalysisService.GetTopicsForUserAsync("twitterusername");
     
-### Sample 8 - Organize people on Twitter Lists
-    var result = await customerFinderService.GetTwitterProfilesByKeywordAsync(keyword);
-    var totalPaes = Math.Ceiling((double)result.Count() / 100);
-    for (int iPage = 0; iPage < totalPaes; iPage++)
-    {
-       var pageItems = result.Skip(iPage * 100).Take(100).Select(p => p.username).ToList();
-       await twitterService.AddUsersToListAsync(pageItems, azurePeopleList.ListIDResponse);
-    }
-
 The following are sample applications of things you could do with the package
 * Search Images on Bing and feed your Custom Vision Models: https://github.com/efonsecab/BlazorCustomVisionUploader
 * Search Images on Bing and feed your Azure Video Indexer Person Models: https://github.com/efonsecab/BlazorVideoIndexerUploader
