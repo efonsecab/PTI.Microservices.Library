@@ -10,20 +10,6 @@ The TwitterFakeFollowersService currently supports communicating back to the con
 
 The library is designed so that you can use your own Azure Resources, by setting your own configuration.
 
-The package exposes services such as:
-* Azure Bing Search
-* Azure Computer Vision
-* Azure Custom Vision
-* Azure Face
-* Azure Maps
-* Azure Speech
-* Azure Video Indexer
-* IpStack
-* Microsoft Graph
-* Paypal
-* Twitter
-* Youtube
-
 You can download the package at:
 https://www.nuget.org/packages/PTI.Microservices.Library/
 
