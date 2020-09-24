@@ -112,6 +112,8 @@ In the case of the specialized services such as Customer Finder, Emotions Analyz
     logger, twitterService, azureTextAnalyticsService);
     var twitterUserTopics = await twitterDataAnalysisService.GetTopicsForUserAsync("twitterusername");
     
+More samples at https://github.com/efonsecab/PTI.Microservices.Library/blob/master/README.md
+    
 The following are sample applications of things you could do with the package
 * Search Images on Bing and feed your Custom Vision Models: https://github.com/efonsecab/BlazorCustomVisionUploader
 * Search Images on Bing and feed your Azure Video Indexer Person Models: https://github.com/efonsecab/BlazorVideoIndexerUploader
