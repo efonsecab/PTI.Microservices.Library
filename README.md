@@ -6,7 +6,7 @@ The purpose of this package is to help developers create solutions faster by int
 and enforcing Logging and Exception Handling, while still allowing the developers to have the control over the configuration.
 The package is designed to be consumed from microservices, so most items are async and do as little as possible, unless you configure it to do more, for example, in the case of Twitter Services, they support retry configuration, and have out of the box support for waiting for Twitter API Rate Limit, thanks for the great work done by Joe Mayo (https://github.com/JoeMayo) with his LinqToTwitter library.
 The TwitterFakeFollowersService currently supports communicating back to the consumer by using Action delegates, and the future version of it will support using SignalR.
-"PTI.Microservices.Library" is currently running under .NET Core 3.1.
+"PTI.Microservices.Library" is currently running under .NET 5.
 
 The library is designed so that you can use your own Azure Resources, by setting your own configuration.
 
