@@ -58,6 +58,7 @@ namespace BlazorSample.Server
             services.AddTransient<AzureComputerVisionService>();
             services.AddTransient<TwitterService>();
             services.AddTransient<AudibleTwitterService>();
+            services.AddTransient<AudibleComputerVisionService>();
             services.AddControllersWithViews();
             services.AddRazorPages();
         }

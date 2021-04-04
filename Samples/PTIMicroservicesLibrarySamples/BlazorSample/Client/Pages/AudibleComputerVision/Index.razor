@@ -1,0 +1,39 @@
+﻿@page "/AudibleComputerVision/Index"
+<h3>Index</h3>
+
+<form>
+    <BlazorSample.Client.Components.LoadingComponent IsLoading="IsLoading"></BlazorSample.Client.Components.LoadingComponent>
+    <div class="row">
+        <div class="col">
+            <InputFile class="form-control" OnChange="@OnInputFileChange" accept="image/*"></InputFile>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            @if (this.AudioBase64 != null)
+            {
+                <audio controls src="data:audio/mp3;base64, @AudioBase64" autoplay></audio>
+            }
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            @if (!String.IsNullOrWhiteSpace(this.ImageBase64))
+            {
+                <img class="img-thumbnail" src="data:image/png;base64, @this.ImageBase64" />
+            }
+        </div>
+    </div>
+</form>
+<!--<div class="container">-->
+@*@if (!String.IsNullOrWhiteSpace(FileData))
+    {
+        <span>Data: @FileData</span>
+    }
+    <span>File Name: @FileName</span>
+    <span>Response Message: @ResponseMessage</span>*@
+@*<button @onclick="@( async() => await DescribeImage())">Take Photo</button>*@
+@*<video autoplay @ref="VideoElement" style="display:none;"></video>
+    <img src="" @ref="ImageElement" />
+    <canvas style="display:none;" @ref="CanvasElement"></canvas>*@
+<!--</div>-->
