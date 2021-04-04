@@ -40,12 +40,24 @@ namespace BlazorSample.Server
                 Configuration.GetSection($"AzureConfiguration:{nameof(AzureSpeechConfiguration)}")
                 .Get<AzureSpeechConfiguration>();
             services.AddSingleton(azureSpeechConfiguration);
-            services.AddTransient<AzureSpeechService>();
 
+            var twitterConfiguration =
+                Configuration.GetSection(nameof(TwitterConfiguration)).Get<TwitterConfiguration>();
+            services.AddSingleton(twitterConfiguration);
+
+            var azureComputerVisionConfiguration =
+                Configuration.GetSection($"AzureConfiguration:{nameof(AzureComputerVisionConfiguration)}")
+                .Get<AzureComputerVisionConfiguration>();
+            services.AddSingleton(azureComputerVisionConfiguration);
+
+            services.AddTransient<AzureSpeechService>();
             services.AddTransient<CustomHttpClientHandler>();
             services.AddTransient<CustomHttpClient>();
             services.AddTransient<AzureMapsService>();
             services.AddTransient<AudibleWeatherService>();
+            services.AddTransient<AzureComputerVisionService>();
+            services.AddTransient<TwitterService>();
+            services.AddTransient<AudibleTwitterService>();
             services.AddControllersWithViews();
             services.AddRazorPages();
         }

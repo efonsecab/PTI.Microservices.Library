@@ -1,0 +1,45 @@
+﻿@page "/Twitter/Index"
+<h3>Index</h3>
+
+<BlazorSample.Client.Components.LoadingComponent IsLoading="IsLoading"></BlazorSample.Client.Components.LoadingComponent>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <input type="text" placeholder="Type Username" @bind-value="Username" />
+        </div>
+        <div class="col">
+            <button @onclick="( async()=> await LoadUserTweets())">Load Tweets</button>
+        </div>
+    </div>
+    @if (this.LatestTweets != null)
+    {
+        <div class="row">
+            <div class="col">
+                <audio controls src="data:audio/mp3;base64, @LatestTweets.TweetsAudioBase64" autoplay></audio>
+            </div>
+        </div>
+        foreach (var singleTweet in this.LatestTweets.Tweets)
+        {
+            <div class="row">
+                <div class="col">@singleTweet.CreatedAt</div>
+                <div class="col">@singleTweet.Id</div>
+                <div class="col">@singleTweet.Text</div>
+                <div class="col">
+                    @if (singleTweet.Media != null && singleTweet.Media.Count() > 0)
+                    {
+                        foreach (var singleMedia in singleTweet.Media)
+                        {
+                            if (!String.IsNullOrWhiteSpace(singleMedia.MediaUrl) || !String.IsNullOrWhiteSpace(singleMedia.MediaUrlHttps))
+                            {
+                                <a href="@(singleMedia.MediaUrl ?? singleMedia.MediaUrlHttps)" target="_blank">
+                                    <img src="@(singleMedia.MediaUrl ?? singleMedia.MediaUrlHttps)" class="img-thumbnail" />
+                                </a>
+                            }
+                        }
+                    }
+                </div>
+            </div>
+        }
+    }
+</div>
