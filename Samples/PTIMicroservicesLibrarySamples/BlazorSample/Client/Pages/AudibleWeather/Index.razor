@@ -1,0 +1,17 @@
+﻿@page "/AudibleWeather/Index"
+<h3>Index</h3>
+
+<BlazorSample.Client.Components.LoadingComponent IsLoading="IsLoading"></BlazorSample.Client.Components.LoadingComponent>
+@if (Latitude != null && Longitude != null)
+{
+    <div class="row">
+        <div class="col"><span>Latitude: </span>@Latitude</div>
+        <div class="col"><span>Longitude: </span>@Longitude</div>
+        @if (CoordinateAudioBase64 != null)
+        {
+            <div class="col">
+                <audio controls src="data:audio/mp3;base64, @CoordinateAudioBase64" autoplay></audio>
+            </div>
+        }
+    </div>
+}
