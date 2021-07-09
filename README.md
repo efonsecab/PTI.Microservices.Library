@@ -10,7 +10,15 @@ The TwitterFakeFollowersService currently supports communicating back to the con
 
 The library is designed so that you can use your own Azure Resources, by setting your own configuration.
 
+## Option 1
+Install the desired packages prefixed with "PTI.Microservices.Library." starting with the version "2.0.0.0-preview"
+
+This will be the original option.
+
+## Option 2 (deprecating)
 Install The Following Packages.
+
+This package is deprecating in favor of the Option 1 packages, therefore, these the original library will not have any new code added.
 
 1. PTI.Microservices.Library
 https://www.nuget.org/packages/PTI.Microservices.Library/
