@@ -13,7 +13,7 @@ The library is designed so that you can use your own Azure Resources, by setting
 ## Option 1
 Install the desired packages prefixed with "PTI.Microservices.Library." starting with the version "2.0.0.0-preview"
 
-This will be the original option.
+This will be the main option.
 
 ## Option 2 (deprecating)
 Install The Following Packages.
